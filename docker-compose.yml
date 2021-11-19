@@ -1,0 +1,15 @@
+version: '2.1.1'
+services:
+  app: 
+      container_name: my-app
+      build:
+            context: .
+            dockerfile: Dockerfile
+      volumes:
+          - '.:/app'
+          - '/app/node_modules'
+      ports:
+          - '3030:3000'
+      environment:
+          - NODE_ENV=development
+
